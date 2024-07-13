@@ -33,3 +33,17 @@ console.log(typeof(obj));
 
 let arr = [1, 2, 3, 4, 5]
 console.log(typeof(arr));
+
+//Activity: 4
+//Reassigning variables
+
+let Activity = 4
+console.log(Activity);
+
+Activity = 'Moving to 5'
+console.log(Activity);
+
+const num2 = '3'
+num2 = '4'
+console.log(num2);
+//const doesnot allow us to change value of the variable
