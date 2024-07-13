@@ -8,7 +8,7 @@ This challenge is designed to help improve my JavaScript skills by solving a new
 
 ## Daily Progress
 
-I will be committing my solutions to this repository on a daily basis. Each day's solution will be in its respective directory, named `Day-X`, where `X` represents the day number.
+I will be committing my solutions to this repository on a daily basis. Each day's solution will be in its respective directory, named `dayX`, where `X` represents the day number.
 
 ## How to Use This Repository
 
