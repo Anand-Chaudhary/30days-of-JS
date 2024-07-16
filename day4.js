@@ -3,42 +3,98 @@
 
 //Activity: 1
 //For Loop
-for (let i = 1; i <= 10; i++) {
-    console.log(i);
+function printOneToTen() {
+    for (let i = 1; i <= 10; i++) {
+        console.log(i);
+    }
 }
+printOneToTen();
 
-let p = 1;
-for (let i = 1; i <= 10; i++) {
-    p = 5 * i;
-    console.log(p);
+function tableOfFive() {
+    let p = 1;
+    for (let i = 1; i <= 10; i++) {
+        p = 5 * i;
+        console.log(p);
+    }
 }
+tableOfFive();
 
 //Activity: 2
 //While Loop
-let a = 1, sum = 0;
-while (a<=10) {
-    sum = sum + a;
-    console.log(sum);
-    a++;
-}
 
-let b = 10;
-while (b >= 1) {
-    console.log(b);
-    b--;
+function sumOfOneToTen() {
+    let a = 1, sum = 0;
+    while (a <= 10) {
+        sum = sum + a;
+        console.log(sum);
+        a++;
+    }
 }
+sumOfOneToTen();
+
+function printTenToOne() {
+    let b = 10;
+    while (b >= 1) {
+        console.log(b);
+        b--;
+    }
+}
+printTenToOne();
 
 //Activity: 3
 //Do-While Loop
-let c = 1
-do {
-    console.log(c);
-    c++;
-} while (c <= 5);
+function printOneToFive() {
+    let c = 1
+    do {
+        console.log(c);
+        c++;
+    } while (c <= 5);
+}
 
-let d = 5, fact = 1, product = 1;
-do {
-    product = d * fact;
-    console.log(product);
-    fact++;
-} while (fact <= d);
+function factorial(d) {
+    let fact = 1;
+    if ( d == 0 || d == 1) {
+        fact = 1;
+    }
+    do {
+        fact = d * fact;
+        d--
+    } while ( d >= 1);
+    return fact
+}
+console.log(factorial(6));
+
+//Activity: 4
+//Nested Loops
+function star(a) {
+    for (let i = 0; i <= a; i++) {
+        for (let j = 0; j <= i-1; j++) {
+            process.stdout.write("* ")
+        };
+        console.log();
+    };
+}
+star(5);
+
+//Activity: 5
+//Loop Control Structure
+function skipNumber(n) {
+    for (let i = 0; i <= n; i++) {
+        if (i == 5) {
+            continue;
+        }
+        console.log(i);
+    }
+}
+skipNumber(10);
+
+function stopNumber(n) {
+    for (let i = 0; i <= n; i++) {
+        if (i == 7) {
+            console.log(i);
+            break;
+        };
+        console.log(i);
+    };
+};
+stopNumber(10);
