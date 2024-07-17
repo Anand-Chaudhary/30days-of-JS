@@ -43,7 +43,52 @@ const sum = (a, b)=>{
 }
 console.log(sum(10, 5));
 
-const contain = (str1, char) => {
-    
+const contain = (str, char) => {
+    return str.includes(char)
 }
-contain("Aakash", "h")
+console.log(contain("Aakash", "h"))
+
+//Activity: 4
+//Function Parameters and Default Values
+function product(a, b = 3) {
+    return a * b;
+}
+console.log(product(4));
+
+function greet(name, age = 12) {
+    console.log("Hi, " + name + " of age " + age);
+}
+greet("Aakash");
+
+//Activity: 5
+//Higher Order Functions
+function callback() {
+    console.log("I am a callback");
+}
+
+function HOF(callback, a) {
+  for (let i = 0; i <= a; i++) {
+    callback()
+  }
+}
+console.log(HOF(callback, 5));
+
+
+function higherOrderFunction(fun1, fun2, val) {
+    const result1 = fun1(val);
+    const result2 = fun2(result1);
+    return result2;
+}
+
+function addTwo(x) {
+    return x + 2;
+}
+
+function multiplyByThree(x) {
+    return x * 3;
+}
+
+const initialValue = 5;
+const finalResult = higherOrderFunction(addTwo, multiplyByThree, initialValue);
+
+console.log(finalResult); 
