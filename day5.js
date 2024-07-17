@@ -38,3 +38,12 @@ console.log(concatStr("Good", "Morning"));
 
 //Activity: 3
 //Arrow Function
+const sum = (a, b)=>{
+    return a + b;
+}
+console.log(sum(10, 5));
+
+const contain = (str1, char) => {
+    
+}
+contain("Aakash", "h")
