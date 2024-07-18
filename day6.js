@@ -42,3 +42,12 @@ arr.forEach(element => {
     console.log(element);
 });
 
+//Activity: 5
+//Multi-Dimensional Array
+let mutidimentionalArr =[
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+console.log(mutidimentionalArr[2][1]);
