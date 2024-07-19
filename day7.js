@@ -54,3 +54,5 @@ for (const property in Book) {
     console.log(`${property} : ${Book[property]}`);
 }
 
+console.log(Object.keys(Book).toString());
+console.log(Object.values(Book).toString());
