@@ -1,8 +1,8 @@
 //Day: 7
 //Objects
 
-//Activity: 1
-//Object creation and access
+//Activity: 1, 2 and 4
+//Object creation and access, methods and this keyword
 let Book = {
     title : "Wishpers From A Grave",
     author : "Tamanna Sharma",
@@ -47,4 +47,10 @@ console.log(library.name);
 library.books.forEach(book =>{
     console.log((book.name));
 })
+
+//Activity: 5
+//Object iteration
+for (const property in Book) {
+    console.log(`${property} : ${Book[property]}`);
+}
 
