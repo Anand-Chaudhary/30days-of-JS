@@ -34,3 +34,15 @@ function sum(...num) {
     return num.reduce((res, curr)=> res + curr, 0)
 }
 console.log(sum(2, 3, 4, 5));
+
+//Activity: 4
+//Default Parameters
+function product(c, d = 1) {
+    return c * d;
+}
+
+console.log(product(2));
+console.log(product(3, 4));
+
+//Activity: 5
+//Enhanced Object Literals
