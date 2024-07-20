@@ -10,3 +10,27 @@ console.log(`Hi \nI am ${name} \nI am ${age} years old`);
 
 //Activity: 2
 //Destructuring
+let a, b, rest;
+[a, b, rest] = [1, 2, 3, 4, ,5];
+console.log(a, b);
+
+
+let Book = {
+    title : "Wishpers From A Grave",
+    author : "Tamanna Sharma",
+    year : 2024
+}
+let {title, author} = Book;
+console.log(`Book: ${title} \nAuthor: ${author}`);
+
+//Activity: 3
+//Spread and rest operator
+let arr1 = [1, 2, 3, 4, 5,]
+let arr2 = [6, 7, 8, 9, 10];
+let newArr = [...arr1, ...arr2]
+console.log(newArr);
+
+function sum(...num) {
+    return num.reduce((res, curr)=> res + curr, 0)
+}
+console.log(sum(2, 3, 4, 5));
