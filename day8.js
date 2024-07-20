@@ -46,3 +46,32 @@ console.log(product(3, 4));
 
 //Activity: 5
 //Enhanced Object Literals
+let Books = {
+    title : "Wishpers From A Grave",
+    author : "Tamanna Sharma",
+    year : 2024,
+    getTitleandAuthor : ()=>{
+        return`${Book.title} by ${Book.author}`
+    },
+
+    getYear : (year) =>{
+        return `This book was not published on ${Book.year} but in ${year}`
+    },
+
+    getString : function () {
+        return `Book ${this.title} by author ${this.author} was publish in year ${this.year}`
+    }
+}
+console.log(Books);
+console.log(Books.getString());
+console.log(Books.getYear(2023));
+
+let key1 = "name";
+let key2 = "age";
+let value1 = "Aloo Bahadur";
+let value2 = "6 months";
+let person = {
+    key1 : value1,
+    key2: value2
+}
+console.log(person);
