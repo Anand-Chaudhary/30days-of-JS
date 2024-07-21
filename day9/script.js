@@ -8,5 +8,16 @@ document.querySelector('.color').style.backgroundColor = "red";
 
 //Activity: 2
 //Creating and Appending Elecmet
-document.createElement('div').append('This div is appended');
-document.getElementsByTagName('ul').createElement('li').append('Appended')
+const div = document.createElement('div');
+div.append('This div is appended');
+
+document.querySelector('body').appendChild(div);
+
+
+const li = document.createElement('li');
+li.append('Appended');
+
+const ul = document.getElementsByTagName('ul')[0];
+if (ul) {
+  ul.appendChild(li);
+}
