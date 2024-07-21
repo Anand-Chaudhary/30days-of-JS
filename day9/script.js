@@ -19,18 +19,37 @@ li.append('Appended');
 
 const ul = document.getElementsByTagName('ul')[0];
 if (ul) {
-  ul.appendChild(li);
+    ul.appendChild(li);
 }
 
 //Activity: 3
 //Removing elements
 let remove = document.getElementById('remove');
 if (remove) {
-  remove.remove();
+    remove.remove();
 }
 
 let lastElement = document.querySelector('.removeLast')
 lastElement.lastElementChild.remove()
 
 //Activity: 4
-//
+//Modifying attributes
+document.querySelector('img').setAttribute('src', 'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+
+document.getElementById('text').style.color = 'green';
+
+//Activity: 5
+//Event Listener
+document.querySelector('button').addEventListener('click', () => {
+    document.querySelector('.change').innerText = 'iuafhjnjodanoijuie ahicfjidhjihb u eb ehuiahuhfjbnhvbdshubhuubhsbjb';
+});
+
+let box = document.querySelector('.box');
+
+box.addEventListener('mouseover', () => {
+    box.style.border = '2px solid green';
+});
+
+box.addEventListener('mouseout', () => {
+    box.style.border = '2px solid black';
+});
