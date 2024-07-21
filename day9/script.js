@@ -21,3 +21,16 @@ const ul = document.getElementsByTagName('ul')[0];
 if (ul) {
   ul.appendChild(li);
 }
+
+//Activity: 3
+//Removing elements
+let remove = document.getElementById('remove');
+if (remove) {
+  remove.remove();
+}
+
+let lastElement = document.querySelector('.removeLast')
+lastElement.lastElementChild.remove()
+
+//Activity: 4
+//
