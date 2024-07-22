@@ -23,3 +23,18 @@ document.querySelector('.mouseover').addEventListener('mouseout', ()=>{
 
 //Activity: 3
 //Key Board Events
+document.querySelector('input').addEventListener('keydown', (key)=>{
+    console.log(key);
+})
+
+document.querySelector('input').addEventListener('keyup', ()=>{
+    document.querySelector('.task6').innerText = document.querySelector('input').value
+})
+
+//Activity: 4
+//Form events
+document.querySelector('.submit').addEventListener('click', (evt)=>{
+    evt.preventDefault();
+    console.log('Username: ', document.querySelector('.username').value);
+    console.log('Email: ', document.querySelector('.email').value);
+})
