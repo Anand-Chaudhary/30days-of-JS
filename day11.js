@@ -128,3 +128,20 @@ Promise.all([fetch1, fetch2, fetch3])
     .catch(error => {
         console.error('Error:', error);
     });
+
+
+const apiUrl4 = 'https://api.coindesk.com/v1/bpi/currentprice.json';
+const apiUrl5 = 'https://api.exchangerate-api.com/v4/latest/USD';
+const apiUrl6 = 'https://api.agify.io/?name=michael';
+
+const fetch4 = fetch(apiUrl4).then(response => response.json());
+const fetch5 = fetch(apiUrl5).then(response => response.json());
+const fetch6 = fetch(apiUrl6).then(response => response.json());
+
+Promise.race([fetch4, fetch5, fetch6])
+    .then(result => {
+        console.log('First result:', result);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
