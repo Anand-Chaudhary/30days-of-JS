@@ -110,3 +110,21 @@ async function fetchData() {
 }
 fetchData();
 
+//Activity: 5
+//Concurrent Promises
+
+const apiUrl1 = 'https://api.coindesk.com/v1/bpi/currentprice.json';
+const apiUrl2 = 'https://api.exchangerate-api.com/v4/latest/USD';
+const apiUrl3 = 'https://api.agify.io/?name=michael';
+
+const fetch1 = fetch(apiUrl1).then(response => response.json());
+const fetch2 = fetch(apiUrl2).then(response => response.json());
+const fetch3 = fetch(apiUrl3).then(response => response.json());
+
+Promise.all([fetch1, fetch2, fetch3])
+    .then(results => {
+        console.log('Results:', results);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
