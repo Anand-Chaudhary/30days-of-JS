@@ -44,3 +44,26 @@ try {
 }
 
 //Activity: 3
+//Custom Error Objects
+// class builtinErrors{
+
+// }
+
+// class customError extends builtinErrors{
+//     constructor(){}
+
+// }
+
+function check(name) {
+    if (name === undefined || name.length == 0) {
+        throw new SyntaxError('You cannot keep it empty');
+    }
+    return name;
+}
+
+try {
+    console.log(`The name is ${check()}`);
+} 
+catch (error) {
+    console.log(error.message);
+}
