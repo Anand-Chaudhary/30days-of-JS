@@ -45,14 +45,28 @@ try {
 
 //Activity: 3
 //Custom Error Objects
-// class builtinErrors{
-
-// }
-
-// class customError extends builtinErrors{
-//     constructor(){}
-
-// }
+// Custom error class
+class CustomError extends Error {
+    constructor(message) {
+      super(message); 
+      this.name = this.constructor.name; 
+    }
+  }
+  
+  function riskyFunction() {
+    throw new CustomError("Something went wrong in riskyFunction!");
+  }
+  
+  try {
+    riskyFunction();
+  } catch (error) {
+    if (error instanceof CustomError) {
+      console.error(`CustomError caught: ${error.message}`);
+    } else {
+      console.error(`An unexpected error occurred: ${error.message}`);
+    }
+  }
+  
 
 function check(name) {
     if (name === undefined || name.length == 0) {
