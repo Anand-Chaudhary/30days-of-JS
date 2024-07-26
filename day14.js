@@ -68,3 +68,46 @@ console.log(person.fullName)
 person.fullName = "Ananya Singh";
 console.log(person.fullName);
 
+//Activity: 5
+//Private Fields
+class Account {
+    #balance;
+
+    constructor(initialBalance) {
+        this.#balance = initialBalance;
+    }
+
+    deposit(amount) {
+        if (amount > 0) {
+            this.#balance += amount;
+            console.log(`Deposited: ${amount}, New Balance: ${this.#balance}`);
+        } else {
+            console.log("Deposit amount must be positive.");
+        }
+    }
+
+    withdraw(amount) {
+        if (amount > 0 && amount <= this.#balance) {
+            this.#balance -= amount;
+            console.log(`Withdrew: ${amount}, New Balance: ${this.#balance}`);
+        } else if (amount > this.#balance) {
+            console.log("Insufficient balance.");
+        } else {
+            console.log("Withdraw amount must be positive.");
+        }
+    }
+
+    getBalance() {
+        return this.#balance;
+    }
+}
+
+const myAccount = new Account(1000);
+
+myAccount.deposit(500); 
+myAccount.withdraw(200); 
+myAccount.withdraw(2000); 
+myAccount.deposit(-100); 
+myAccount.withdraw(-100);
+
+console.log(`Final Balance: ${myAccount.getBalance()}`); 
