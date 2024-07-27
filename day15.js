@@ -3,14 +3,14 @@
 
 //Activity: 1
 //Understanding Closures
-function outer() {
-    let fruit = "Mango"
+function outer(fruit) {
     function inner() {
         console.log(`My favourite fruit is ${fruit}`);
     }
-    inner();
+    return inner;
 }
-outer();
+const myClosure = outer("Mango");
+myClosure()
 
 function counter() {
     let counter = 0;
@@ -26,9 +26,32 @@ function counter() {
         increment();
         getValue();
     };
-    privateCounter();
+    return privateCounter;
 };
-counter();
+const myCounter = counter();
+myCounter();
 
 //Activity: 2
 //Practical Closures
+function ids() {
+    let lastId = 0;
+    function newID() {
+        lastId++;
+        let startWith = "DAV";
+        let id = startWith + lastId.toString();
+        console.log(`Your id is: ${id}`);
+    };
+    return newID;
+}
+const myID = ids()
+myID();
+myID();
+
+function user(userName) {
+    function greet() {
+        console.log(`Hi, a warm welcom to ${userName}.`);
+    }
+    return greet;
+};
+const newUser = user("Aakash");
+newUser();
