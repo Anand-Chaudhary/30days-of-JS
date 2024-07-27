@@ -55,3 +55,16 @@ function user(userName) {
 };
 const newUser = user("Aakash");
 newUser();
+
+//Activity: 3
+//Closures in loop
+let func = [];
+for (let i = 0; i < 10; i++) {
+    func.push(function(index){
+        return function(){
+            console.log(index);
+        }
+    }(i))
+}
+func[0]();
+func[1]();
