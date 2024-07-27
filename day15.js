@@ -100,4 +100,50 @@ myModule.addItems("Apple");
 myModule.addItems("Dog");
 myModule.addItems("Cat");
 myModule.removeItems("Apple");
-myModule.listItems()
+myModule.listItems();
+
+//Activity: 5
+const add = (a, b) => {
+    return a + b;
+}
+
+function memoize(fun) {
+    let previousResults = {};
+    return function(...args) {
+        let key = JSON.stringify(args);
+        if (key in previousResults) {
+            console.log(`You have done this before`);
+            return previousResults[key];
+        } else {
+            let result = fun(...args);
+            previousResults[key] = result;
+            return result;
+        }
+    }
+}
+
+const sum = memoize(add);
+console.log(sum(3, 4)); 
+console.log(sum(3, 4)); 
+console.log(sum(4, 5)); 
+
+function memoizeFactorial() {
+    const cache = {}; 
+
+    function factorial(n) {
+        if (n <= 1) return 1; 
+        if (cache[n] !== undefined) {
+            console.log(`You have done this before ${n}`);
+            return cache[n]; 
+        } else {
+            cache[n] = n * factorial(n - 1); 
+            return cache[n];
+        }
+    }
+
+    return factorial;
+}
+
+const memoizedFactorial = memoizeFactorial();
+
+console.log(`Calculating we get, ${memoizedFactorial(5)}`);
