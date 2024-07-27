@@ -68,3 +68,36 @@ for (let i = 0; i < 10; i++) {
 }
 func[0]();
 func[1]();
+
+//Activity: 4
+//Module Pattern
+function Module() {
+    let items = [];
+    return{
+        addItems(item){
+            items.push(item);
+            console.log(items);
+        },
+
+        removeItems(item){
+            let index = items.indexOf(item);
+            if (index > -1) {
+                items.splice(index, 1);
+                console.log(`${item} removed.`);
+            } else {
+                console.log(`${item} not found.`);
+            }
+        },
+
+        listItems(){
+            console.log(items);
+        }
+    }
+}
+
+const myModule = Module();
+myModule.addItems("Apple");
+myModule.addItems("Dog");
+myModule.addItems("Cat");
+myModule.removeItems("Apple");
+myModule.listItems()
