@@ -41,3 +41,18 @@ console.log(maxElement([100, 120, 30, 900]));
 
 //Activity: 3
 //String Manipulation Using Recursion
+function revStr(str) {
+    if (str.length == 0) return "";
+    return revStr(str.slice(1)) + str[0];
+}
+console.log(revStr("Aakash"));
+console.log(revStr("Helllo"));
+console.log(revStr(""));
+
+function palindromeChecker(str) {
+    if (str.length == 0) return "";
+    if(revStr(str.slice(1)) + str[0] == str) return "String is palindrome";
+    return "String is not palindrome"
+}
+console.log(palindromeChecker("Aakash"));
+console.log(palindromeChecker("racecar"));
