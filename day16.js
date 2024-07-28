@@ -20,3 +20,24 @@ function fibonacci(n) {
     return fibonacci(n - 1) + fibonacci(n - 2);
 };
 console.log(fibonacci(5));
+
+//Activity: 2
+//Recursion with Array
+function sumArray(arr) {
+    if (arr.length == 0) return 0;
+    return arr[0] + sumArray(arr.slice(1));
+};
+console.log(sumArray([1, 2, 3, 4, 5]));
+console.log(sumArray([2]));
+console.log(sumArray([]));
+
+function maxElement(arr) {
+    if (arr.length == 1) return arr[0];
+    let max = maxElement(arr.slice(1));
+    return arr[0] > max ? arr[0] : max;
+};
+console.log(maxElement([1, 2, 3, 4, 5]));
+console.log(maxElement([100, 120, 30, 900]));
+
+//Activity: 3
+//String Manipulation Using Recursion
