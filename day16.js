@@ -56,3 +56,41 @@ function palindromeChecker(str) {
 }
 console.log(palindromeChecker("Aakash"));
 console.log(palindromeChecker("racecar"));
+
+//Activity: 4
+//Recursice Search
+function binarySearch(arr, target, left = 0, right = arr.length - 1) {
+    if (left > right) {
+        return -1;
+    }
+    
+    const mid = Math.floor((left + right) / 2);
+    
+    if (arr[mid] === target) {
+        return mid;
+    } else if (arr[mid] > target) {
+        return binarySearch(arr, target, left, mid - 1);
+    } else {
+        return binarySearch(arr, target, mid + 1, right);
+    }
+}
+
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7], 4)); // Output: 3
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7], 6)); // Output: 5
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7], 8)); // Output: -1
+
+
+function countOccurrences(arr, target) {
+    if (arr.length === 0) {
+        return 0;
+    }
+    
+    return (arr[0] === target ? 1 : 0) + countOccurrences(arr.slice(1), target);
+}
+
+console.log(countOccurrences([1, 2, 3, 4, 2, 2, 5], 2)); // Output: 3
+console.log(countOccurrences([1, 2, 3, 4, 5], 6)); // Output: 0
+console.log(countOccurrences([], 1)); // Output: 0
+
+//Activity: 5
+//Tree Traversal
