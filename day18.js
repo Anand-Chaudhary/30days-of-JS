@@ -101,4 +101,33 @@ binarySearch([2, 3, 4, 10, 40], 10);
 
 //Activity: 3
 //String Algorithms
+function countCharacterOccurrences(str) {
+    let counts = {};
+    for (let char of str) {
+        counts[char] = (counts[char] || 0) + 1;
+    }
+    console.log("Character Counts: ", counts);
+    return counts;
+}
 
+countCharacterOccurrences("hello world");
+
+function longestSubstringWithoutRepeatingCharacters(s) {
+    let seen = new Map();
+    let start = 0, maxLength = 0;
+
+    for (let end = 0; end < s.length; end++) {
+        if (seen.has(s[end])) {
+            start = Math.max(seen.get(s[end]) + 1, start);
+        }
+        seen.set(s[end], end);
+        maxLength = Math.max(maxLength, end - start + 1);
+    }
+    console.log("Longest Substring Length: ", maxLength);
+    return maxLength;
+}
+
+longestSubstringWithoutRepeatingCharacters("abcabcbb");
+
+//Activity: 4
+//Array Algs
