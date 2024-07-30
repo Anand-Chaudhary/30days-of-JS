@@ -64,3 +64,41 @@ console.log("Quicksort: ", quickSortedArray);
 
 //Activity: 2
 //Searching
+function linearSearch(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+            console.log("Linear Search: Index of", target, "is", i);
+            return i;
+        }
+    }
+    console.log("Linear Search: Target not found");
+    return -1;
+}
+
+linearSearch([2, 3, 4, 10, 40], 10);
+
+function binarySearch(arr, target) {
+    let left = 0, right = arr.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+
+        if (arr[mid] === target) {
+            console.log("Binary Search: Index of", target, "is", mid);
+            return mid;
+        } else if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    console.log("Binary Search: Target not found");
+    return -1;
+}
+
+binarySearch([2, 3, 4, 10, 40], 10);
+
+//Activity: 3
+//String Algorithms
+
