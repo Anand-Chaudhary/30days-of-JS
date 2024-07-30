@@ -131,3 +131,41 @@ longestSubstringWithoutRepeatingCharacters("abcabcbb");
 
 //Activity: 4
 //Array Algs
+function rotateArray(arr, k) {
+    k = k % arr.length;
+    arr = arr.slice(-k).concat(arr.slice(0, -k));
+    console.log("Rotated Array: ", arr);
+    return arr;
+}
+
+rotateArray([1, 2, 3, 4, 5, 6, 7], 3);
+
+function mergeSortedArrays(arr1, arr2) {
+    let mergedArray = [];
+    let i = 0, j = 0;
+
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            mergedArray.push(arr1[i]);
+            i++;
+        } else {
+            mergedArray.push(arr2[j]);
+            j++;
+        }
+    }
+
+    while (i < arr1.length) {
+        mergedArray.push(arr1[i]);
+        i++;
+    }
+
+    while (j < arr2.length) {
+        mergedArray.push(arr2[j]);
+        j++;
+    }
+
+    console.log("Merged Array: ", mergedArray);
+    return mergedArray;
+}
+
+mergeSortedArrays([1, 3, 5], [2, 4, 6]);
