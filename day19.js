@@ -5,24 +5,24 @@
 //Basic Expression
 const text1 = "I love Javascript. Javascript is a versatile language.";
 const regex1 = /Javascript/g;
-const matches1 = text7.match(regex1);
+const matches1 = text1.match(regex1);
 console.log("Matches for 'Javascript':", matches1);
 
 const text2 = "My phone number is 123-456-7890.";
 const regex2 = /\d+/g;
-const matches2 = text7.match(regex2);
+const matches2 = text2.match(regex2);
 console.log("Matches for digits:", matches2);
 
 //Activity: 2
 //Character Classes and Quantifiers
 const text3 = "Alice went to the Wonderland. Bob was not there.";
 const regex3 = /\b[A-Z][a-z]*\b/g;
-const matches3 = text7.match(regex3);
+const matches3 = text3.match(regex3);
 console.log("Matches for words starting with a capital letter:", matches3);
 
 const text4 = "There are 12 apples, 30 oranges, and 7 bananas.";
 const regex4 = /\d+/g;
-const matches4 = text7.match(regex4);
+const matches4 = text4.match(regex4);
 console.log("Matches for sequences of digits:", matches4);
 
 //Activity: 3
@@ -59,3 +59,15 @@ const text8 = "Goodbye world";
 const regex8 = /\b\w+\b$/;
 const matches8 = text8.match(regex8);
 console.log("Word at the end of the string:", matches8);
+
+//Activity: 5
+//Practiacl Application
+const password = "Password1@";
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+const isValid = passwordRegex.test(password);
+console.log("Is the password valid?", isValid);
+
+const url = "https://www.example.com";
+const regex = /^(https?:\/\/)?([\w\d-]+\.)+[\w\d-]+(\/[\w\d-]+)*\/?$/;
+const isValidurl = regex.test(url);
+console.log("Is the URL valid?", isValidurl);
