@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SessionStorage Example</title>
+</head>
+<body>
+  <form id="userForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="displayData"></div>
+
+  <script>
+    document.getElementById('userForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      sessionStorage.setItem('name', name);
+      sessionStorage.setItem('email', email);
+      displayData();
+    });
+
+    function displayData() {
+      var name = sessionStorage.getItem('name');
+      var email = sessionStorage.getItem('email');
+      if (name && email) {
+        document.getElementById('displayData').innerHTML = `Name: ${name}<br>Email: ${email}`;
+      }
+    }
+
+    window.onload = function() {
+      displayData();
+    };
+  </script>
+</body>
+</html>
