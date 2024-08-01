@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form with LocalStorage</title>
+  </head>
+  <body>
+    <form id="userForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <h3>Saved Data:</h3>
+    <p id="savedData"></p>
+    <button type="button" id="clearContent">Clear Local Storage</button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedName = localStorage.getItem("name");
+        const savedEmail = localStorage.getItem("email");
+
+        if (savedName && savedEmail) {
+          document.getElementById("savedData").textContent = `Name: ${savedName}, Email: ${savedEmail}`;
+        }
+
+        document.getElementById("userForm").addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+
+          localStorage.setItem("name", name);
+          localStorage.setItem("email", email);
+
+          document.getElementById("savedData").textContent = `Name: ${name}, Email: ${email}`;
+        });
+
+        document.getElementById("clearContent").addEventListener("click", () => {
+          console.log("Before removal:");
+          console.log("Name:", localStorage.getItem("name"));
+          console.log("Email:", localStorage.getItem("email"));
+
+          localStorage.removeItem("name");
+          localStorage.removeItem("email");
+
+          console.log("After removal:");
+          console.log("Name:", localStorage.getItem("name"));
+          console.log("Email:", localStorage.getItem("email"));
+
+          document.getElementById("savedData").textContent = "Data cleared";
+        });
+      });
+    </script>
+  </body>
+</html>
