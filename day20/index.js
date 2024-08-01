@@ -8,7 +8,7 @@ myValue = localStorage.getItem("string");
 console.log(myValue);
 
 let person = {
-  name: "Kalpesh",
+  name: "Aakash",
   country: "India",
   age: 43,
 };
@@ -18,7 +18,7 @@ console.log(JSON.parse(localStorage.getItem("objectPerson")));
 
 // Activity 3
 //Understanding SessionStorage
-sessionStorage.setItem("string", "Kalpesh");
+sessionStorage.setItem("string", "Aakash");
 console.log(sessionStorage.getItem("string"));
 
 let task6Object = {
