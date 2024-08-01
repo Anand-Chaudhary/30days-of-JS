@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Open console to Check output</h1>
+    <script>
+      function saveToStorages(key, value) {
+        localStorage.setItem(key, value);
+        sessionStorage.setItem(key, value);
+
+        console.log(`Local Storage data - ${key}: ${localStorage.getItem(key)}`);
+        console.log(`Session Storage data - ${key}: ${sessionStorage.getItem(key)}`);
+      }
+
+      function clearAll(key) {
+        localStorage.clear();
+        sessionStorage.clear();
+
+        console.log(localStorage.length ? "Local Data not cleared" : "Local Data Cleared");
+        console.log(sessionStorage.length ? "Session data not cleared" : "Session Data Cleared");
+      }
+
+      saveToStorages(`testKey2`, `testdata2`);
+      clearAll(`testKey2`);
+    </script>
+  </body>
+</html>
