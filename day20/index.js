@@ -28,3 +28,14 @@ let task6Object = {
 };
 sessionStorage.setItem("object", JSON.stringify(task6Object));
 console.log(JSON.parse(sessionStorage.getItem("object")));
+
+//Activity 4
+//Using SessionStorage
+function removeFromSessionStorage(key) {
+    console.log("Before removal:", sessionStorage);
+    sessionStorage.removeItem(key);
+    console.log("After removal:", sessionStorage);
+  }
+  
+  removeFromSessionStorage('name'); 
+  
