@@ -148,12 +148,7 @@ function twoSum(array, target) {
   printList(mergedList1); // Output: 1 2 3 4 5 6
   printList(mergedList2); // Output: 1 3 5 7 8 9
   printList(mergedList3); // Output: 0 1 1 2 2 4 6
-  
-  // Activity 5: Valid Parentheses
-  // Task 5: Solve the "Valid Parentheses" problem on LeetCode.
-  // o Write a function that takes a string containing just the characters '(',')','{','}','[' and ']' and determines if the input string is valid.
-  // o A string is valid if open brackets are closed in the correct order.
-  // o Log the result for a few test cases.
+
   function isValid(s) {
     const stack = [];
     const mapping = {
