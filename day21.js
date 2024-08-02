@@ -126,7 +126,6 @@ function twoSum(array, target) {
     return l1;
   }
   
-  // Helper function to print linked list
   function printList(node) {
     while (node) {
       process.stdout.write(node.val + " ");
@@ -135,7 +134,6 @@ function twoSum(array, target) {
     console.log();
   }
   
-  // Test cases
   const list1 = new ListNode(1, new ListNode(3, new ListNode(5)));
   const list2 = new ListNode(2, new ListNode(4, new ListNode(6)));
   const list3 = new ListNode(7, new ListNode(8, new ListNode(9)));
@@ -145,9 +143,9 @@ function twoSum(array, target) {
   const mergedList2 = mergeTwoSortedLists(list1, list3);
   const mergedList3 = mergeTwoSortedLists(list4, list2);
   
-  printList(mergedList1); // Output: 1 2 3 4 5 6
-  printList(mergedList2); // Output: 1 3 5 7 8 9
-  printList(mergedList3); // Output: 0 1 1 2 2 4 6
+  printList(mergedList1); 
+  printList(mergedList2); 
+  printList(mergedList3); 
 
   function isValid(s) {
     const stack = [];
