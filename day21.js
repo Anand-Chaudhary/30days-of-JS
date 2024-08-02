@@ -3,10 +3,8 @@
 // Day 21: LeetCode Easy
 // Tasks/Activities:
 
-// Activity 1 : Two Sum
-// • Task 1: Solve the "Two Sum" problem on LeetCode.
-// Write a function that takes an array of numbers and a target number, and returns the indices of the two numbers that add up to the target.
-// Log the indices for a few test cases.
+// Activity 1
+// Two Sum
 function twoSum(array, target) {
     let number1 = 0;
     let number2 = 1;
@@ -102,13 +100,11 @@ function twoSum(array, target) {
       current = current.next;
     }
   
-    // Append remaining elements
     current.next = l1 !== null ? l1 : l2;
   
     return dummy.next;
   }
   
-  // Helper function to get the last element's value of a linked list
   function getLast(head) {
     while (head.next !== null) {
       head = head.next;
@@ -116,7 +112,6 @@ function twoSum(array, target) {
     return head.val;
   }
   
-  // Helper function to concatenate two linked lists
   function concatenate(l1, l2) {
     let current = l1;
     while (current.next !== null) {
