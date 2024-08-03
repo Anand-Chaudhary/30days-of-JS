@@ -97,11 +97,6 @@ function lengthOfLongestSubstring(s) {
   console.log(lengthOfLongestSubstring(" "));
   console.log(lengthOfLongestSubstring("au"));
 
-//Activity 3: Container With Most Water
-/*Task 3: Solve the “Container With Most Water” problem on LeetCode.
-Write a function that takes an array of non-negative integers where each integer represents the height of a line drawn at each point. Find two lines that together with the x-axis form a container, such that the container holds the most water.
-Log the maximum amount of water for a few test cases.*/
-
 function maxArea(height) {
     let left = 0;
     let right = height.length - 1;
@@ -124,11 +119,6 @@ function maxArea(height) {
   console.log(maxArea([4, 3, 2, 1, 4]));
   console.log(maxArea([1, 2, 1]));
   console.log(maxArea([2, 3, 4, 5, 18, 17, 6]));
-
-// Activity 4: 3Sum
-/*Task 4: Solve the "3Sum” problem on LeetCode.
-Write a function that takes an array of integers and finds all unique triplets in the array which give the sum of zero.
-Log the triplets for a few test cases, including edge cases.*/
 
 function threeSum(nums) {
     nums.sort((a, b) => a - b);
