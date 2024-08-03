@@ -1,6 +1,7 @@
+//Day 22
+//Leetcode Medium
 
 //Activity 1: Add Two Numbers
-
 class ListNode {
     constructor(val = 0, next = null) {
       this.val = val;
