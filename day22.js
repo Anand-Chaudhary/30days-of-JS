@@ -164,15 +164,6 @@ function threeSum(nums) {
   console.log(threeSum([-2, 0, 1, 1, 2]));
   console.log(threeSum([]));
 
-// Activity 5: Group Anagrams
-/*Task 5: Solve the "Group Anagrams” problem on LeetCode.
-Write a function that takes an array of strings and groups anagrams together.
-Log the grouped anagrams for a few test cases.*/
-
-// * Groups anagrams together from the given array of strings.
-//  * @param {string[]} strs - The array of strings to group.
-//  * @return {string[][]} - The grouped anagrams.
-
 function groupAnagrams(strs) {
     const anagramMap = new Map();
 
