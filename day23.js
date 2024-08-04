@@ -150,7 +150,6 @@ var findMedianSortedArrays = function (nums1, nums2) {
     }
   }
   
-  // Helper function to create a linked list from an array
   const createLinkedList = (arr) => {
     let dummyHead = new ListNode(0);
     let current = dummyHead;
@@ -284,21 +283,17 @@ var findMedianSortedArrays = function (nums1, nums2) {
       const wordSet = new Set(wordList);
       if (!wordSet.has(endWord)) return 0;
   
-      // Initialize the queue for BFS
       let queue = [[beginWord, 1]];
   
       while (queue.length > 0) {
           let [currentWord, level] = queue.shift();
   
-          // Try changing each letter of the current word
           for (let i = 0; i < currentWord.length; i++) {
               for (let c = 97; c <= 122; c++) { // ASCII 'a' to 'z'
                   let newWord = currentWord.slice(0, i) + String.fromCharCode(c) + currentWord.slice(i + 1);
   
-                  // If the new word is the end word, return the level + 1
                   if (newWord === endWord) return level + 1;
   
-                  // If the new word is in the word set, add it to the queue and remove from the set
                   if (wordSet.has(newWord)) {
                       queue.push([newWord, level + 1]);
                       wordSet.delete(newWord);
@@ -307,7 +302,6 @@ var findMedianSortedArrays = function (nums1, nums2) {
           }
       }
   
-      // If no transformation sequence is found
       return 0;
   };
   
