@@ -220,9 +220,7 @@ var findMedianSortedArrays = function (nums1, nums2) {
   console.log(trap(height));
   
   /* Activity 4: N Queens */
-  
-  // Task 4: solve n queen problem leetcode
-  
+ 
   /**
    * @param {number}
    * @return {string[][]}
