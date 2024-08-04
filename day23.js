@@ -1,10 +1,5 @@
 /* Day 23: Leetcode Hard */
 /* Activity 1: Median of two sorted arrays */
-
-// Task 1: Solve the "Median of Two Sorted Arrays" problem on leetcode.
-// Write a function that takes two sorted arrays of integers and returns the median of the two sorted arrays.
-// Log the median for a few test cases, including edge cases.
-
 /**
  * @param {number[]} nums1
  * @param {number[]} nums2
@@ -24,17 +19,12 @@ var findMedianSortedArrays = function (nums1, nums2) {
     }
   };
   
-  // const nums1 = [1,3]
-  // const nums2 = [2]
-  
   const nums1 = [1, 2],
     nums2 = [3, 4];
   
   console.log(findMedianSortedArrays(nums1, nums2));
   
   /* Activity 2: Merge k sorted list */
-  
-  // Task 2: Solve the k merged sorted lists problem on leet code
   
   class ListNode {
     constructor(val = 0, next = null) {
@@ -46,27 +36,22 @@ var findMedianSortedArrays = function (nums1, nums2) {
   var mergeKLists = function (lists) {
     if (lists.length === 0) return null;
   
-    // Min-heap to keep track of the smallest node among the k lists
     const minHeap = new MinHeap((a, b) => a.val - b.val);
   
-    // Initialize the heap with the head of each list
     for (let list of lists) {
       if (list !== null) {
         minHeap.insert(list);
       }
     }
   
-    // Dummy head to help with the result list
     let dummyHead = new ListNode(0);
     let current = dummyHead;
   
-    // Extract the smallest node from the heap and add it to the result list
     while (!minHeap.isEmpty()) {
       let smallestNode = minHeap.extract();
       current.next = smallestNode;
       current = current.next;
   
-      // If there is a next node in the list, add it to the heap
       if (smallestNode.next !== null) {
         minHeap.insert(smallestNode.next);
       }
@@ -75,7 +60,6 @@ var findMedianSortedArrays = function (nums1, nums2) {
     return dummyHead.next;
   };
   
-  // MinHeap class implementation
   class MinHeap {
     constructor(compare) {
       this.heap = [];
@@ -160,14 +144,12 @@ var findMedianSortedArrays = function (nums1, nums2) {
     return dummyHead.next;
   };
   
-  // Example usage:
   let l1 = createLinkedList([1, 4, 5]);
   let l2 = createLinkedList([1, 3, 4]);
   let l3 = createLinkedList([2, 6]);
   
   let result = mergeKLists([l1, l2, l3]);
   
-  // Helper function to print the linked list
   const printLinkedList = (node) => {
     let arr = [];
     while (node !== null) {
@@ -177,12 +159,9 @@ var findMedianSortedArrays = function (nums1, nums2) {
     console.log(arr.join(' -> '));
   };
   
-  printLinkedList(result); // Output should be 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6
+  printLinkedList(result);
   
-  /* Activity 3: Trapping rain water */
-  
-  // Task 3: Trapping rain water leetcode problem
-  
+  /* Activity 3: Trapping rain water */  
   /**
    * @param {number[]} height
    * @return {number}
