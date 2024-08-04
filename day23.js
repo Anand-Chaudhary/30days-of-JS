@@ -270,7 +270,6 @@ var findMedianSortedArrays = function (nums1, nums2) {
   console.log(solveNQueens(n));
   
   /* Activity 5: Word ladder */
-  // Task 5: Solve the word ladder problem on leetcode
   
   /**
    * @param {string} beginWord
@@ -279,7 +278,6 @@ var findMedianSortedArrays = function (nums1, nums2) {
    * @return {number}
    */
   var ladderLength = function(beginWord, endWord, wordList) {
-      // Create a set of the wordList for quick lookup
       const wordSet = new Set(wordList);
       if (!wordSet.has(endWord)) return 0;
   
@@ -289,7 +287,7 @@ var findMedianSortedArrays = function (nums1, nums2) {
           let [currentWord, level] = queue.shift();
   
           for (let i = 0; i < currentWord.length; i++) {
-              for (let c = 97; c <= 122; c++) { // ASCII 'a' to 'z'
+              for (let c = 97; c <= 122; c++) { 
                   let newWord = currentWord.slice(0, i) + String.fromCharCode(c) + currentWord.slice(i + 1);
   
                   if (newWord === endWord) return level + 1;
