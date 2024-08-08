@@ -1,0 +1,111 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    color: #333;
+    font-size: 2.5em;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    animation: slideIn 1s ease-in-out;
+  }
+  
+  .add-task, .task-list {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input[type="text"], textarea, input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus, textarea:focus, input[type="date"]:focus {
+    border-color: #007bff;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .task-list h2 {
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  #task-container {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .task {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  

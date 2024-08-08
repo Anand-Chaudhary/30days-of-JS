@@ -58,11 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('task-description').value = taskDescription;
         document.getElementById('date').value = taskDate;
   
-        // Remove the task from the DOM and local storage
         taskItem.remove();
-        saveTasks();  // Save changes to local storage
+        saveTasks();
   
-        // Update local storage to reflect the removal
         const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
         const updatedTasks = tasks.filter(function(task) {
             return task.id != taskId;
@@ -95,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p class="task-date">${task.date}</p>
             </div>
             <div class="task-actions">
-                <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
-                <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                <button class="edit-btn"><i class="fa-solid fa-pen">DELETE</i></button>
+                <button class="delete-btn"><i class="fa-solid fa-trash">EDIT</i></button>
             </div>
         `;
   
