@@ -97,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="delete-btn"><i class="fa-solid fa-trash">EDIT</i></button>
             </div>
         `;
-  
         taskContainer.appendChild(taskItem);
     }
   
