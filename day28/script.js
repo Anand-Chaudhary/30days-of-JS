@@ -1,13 +1,10 @@
-// Sample product data
 const products = [
-    { id: 1, name: 'Product 1', price: 10, description: 'Description 1', imageURL: 'https://via.placeholder.com/100' },
-    { id: 2, name: 'Product 2', price: 20, description: 'Description 2', imageURL: 'https://via.placeholder.com/100' },
-    // Add more products as needed
+    { id: 1, name: 'Plain Black', price: 1200, description: 'Plain Black t-shirt', imageURL: 'https://www.mrporter.com/variants/images/3633577411310824/in/w2000_q60.jpg' },
+    { id: 2, name: 'Coffee Shack', price: 1000, description: 'White t-shirt with simple print on it', imageURL: 'https://content-management-files.canva.com/cdn-cgi/image/f=auto,q=70/2fdbd7ab-f378-4c63-8b21-c944ad2633fd/header_t-shirts2.jpg' },
 ];
 
 let cart = [];
 
-// Function to generate product cards
 function generateProducts() {
     const productList = document.getElementById('product-list');
     productList.innerHTML = '';
@@ -18,14 +15,13 @@ function generateProducts() {
             <img src="${product.imageURL}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p>${product.description}</p>
-            <p>$${product.price}</p>
+            <p>Rs.${product.price}</p>
             <button onclick="addToCart(${product.id})">Add to Cart</button>
         `;
         productList.appendChild(productCard);
     });
 }
 
-// Function to handle adding to cart
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     if (product) {
@@ -39,7 +35,6 @@ function addToCart(productId) {
     }
 }
 
-// Function to update cart display
 function updateCart() {
     const cartItems = document.getElementById('cart-items');
     const totalPrice = document.getElementById('total-price');
@@ -49,7 +44,7 @@ function updateCart() {
         total += item.product.price * item.quantity;
         const cartItem = document.createElement('li');
         cartItem.innerHTML = `
-            ${item.product.name} - $${item.product.price} x ${item.quantity}
+            ${item.product.name} - Rs.${item.product.price} x ${item.quantity}
             <button onclick="removeFromCart(${item.product.id})">Remove</button>
         `;
         cartItems.appendChild(cartItem);
@@ -57,7 +52,6 @@ function updateCart() {
     totalPrice.textContent = total.toFixed(2);
 }
 
-// Function to remove items from cart
 function removeFromCart(productId) {
     cart = cart.filter(item => item.product.id !== productId);
     updateCart();
@@ -71,10 +65,8 @@ document.getElementById('form').addEventListener('submit', function(event) {
     updateCart();
 });
 
-// Show checkout form on checkout button click
 document.getElementById('checkout-btn').addEventListener('click', function() {
     document.getElementById('checkout-form').style.display = 'block';
 });
 
-// Initialize the product list
 generateProducts();
