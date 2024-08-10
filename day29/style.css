@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+#login, #posts {
+    margin-top: 20px;
+}
+
+#post-feed .post {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+}
+
+.post-footer {
+    margin-top: 10px;
+}
+
+.like-button, .comment-button {
+    margin-right: 10px;
+}
+
+.post {
+    transition: background-color 0.3s ease;
+}
+
+.post:hover {
+    background-color: #f9f9f9;
+}
