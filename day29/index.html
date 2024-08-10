@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Social Media</h1>
+        <nav>
+            <a href="#login">Login</a>
+            <a href="#posts">Posts</a>
+        </nav>
+    </header>
+    <main>
+        <section id="login">
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>            
+        </section>
+        <section id="posts">
+            <form id="post-form">
+                <label for="post-text">Post Text:</label>
+                <textarea id="post-text" name="post-text" required></textarea>
+                <label for="post-image">Post Image URL:</label>
+                <input type="text" id="post-image" name="post-image">
+                <button type="submit">Create Post</button>
+            </form>
+            <div id="post-feed">
+                
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
