@@ -80,3 +80,38 @@ function displayPosts() {
 }
 
 displayPosts();
+
+function showNotification(message) {
+    const notifications = JSON.parse(localStorage.getItem('notifications'));
+    notifications.push(message);
+    localStorage.setItem('notifications', JSON.stringify(notifications));
+    const notificationElement = document.createElement('div');
+    notificationElement.classList.add('notification');
+    notificationElement.textContent = message;
+    notificationList.appendChild(notificationElement);
+}
+
+function displayPosts() {
+    const posts = JSON.parse(localStorage.getItem('posts'));
+    const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+    postsContainer.innerHTML = '';
+
+    posts.forEach(post => {
+        const postElement = document.createElement('div');
+        postElement.classList.add('post');
+        
+        if (loggedInUser && post.username === loggedInUser.username) {
+            postElement.classList.add('logged-in-user');
+        }
+        
+        postElement.innerHTML = `
+            <p>${post.text}</p>
+            ${post.image ? `<img src="${post.image}" alt="Post image">` : ''}
+            <div class="actions">
+                <button class="like-btn">Like (${post.likes})</button>
+                <button class="comment-btn">Comment (${post.comments.length})</button>
+            </div>
+        `;
+        postsContainer.appendChild(postElement);
+    });
+}
